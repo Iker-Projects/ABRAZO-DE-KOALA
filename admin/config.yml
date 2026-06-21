@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: TU_USUARIO/sandra-psicologia   # ← Cambia esto por tu usuario/repo de GitHub
+  branch: main
+
+# Las imágenes subidas desde el panel se guardan aquí
+media_folder: "imagenes"
+public_folder: "/imagenes"
+
+# Activa la preview en tiempo real mientras se edita
+show_preview_links: true
+
+collections:
+
+  # ── CONTENIDO PRINCIPAL ──────────────────────────────────────────────
+  - name: "contenido"
+    label: "Contenido de la web"
+    files:
+
+      # DATOS PERSONALES / HERO
+      - name: "perfil"
+        label: "Perfil y presentación"
+        file: "_data/perfil.json"
+        fields:
+          - { label: "Nombre completo",     name: "nombre",    widget: "string",   default: "Sandra Carrera Castaño" }
+          - { label: "Tagline (frase hero)", name: "tagline",   widget: "string",   default: "Un espacio para crecer, comprender y florecer" }
+          - { label: "Descripción corta",   name: "descripcion", widget: "text",   default: "Acompaño a niños, niñas y familias desde la empatía, el respeto y la comprensión de que cada historia es única." }
+          - { label: "Frase inspiracional", name: "frase",     widget: "string",   default: "Creo en un acompañamiento cercano, respetuoso y personalizado." }
+          - { label: "Foto de perfil",      name: "foto",      widget: "image",    required: false, hint: "Sube aquí tu foto. Recomendado: formato vertical, mínimo 600×800px." }
+
+      # CONTACTO
+      - name: "contacto"
+        label: "Datos de contacto"
+        file: "_data/contacto.json"
+        fields:
+          - { label: "Teléfono",   name: "telefono",  widget: "string", default: "+34 678 517 890" }
+          - { label: "Email",      name: "email",     widget: "string", default: "sandracc1998@gmail.com" }
+          - { label: "Ubicación",  name: "ubicacion", widget: "string", default: "Santiago de Compostela" }
+          - { label: "Instagram / Web", name: "instagram", widget: "string", default: "@pscologa_koalificada" }
+          - { label: "ID de Formspree (formulario)", name: "formspree_id", widget: "string", hint: "Ve a formspree.io, crea un formulario y pega aquí el ID (ej: xbjeqkzp)" }
+
+  # ── SERVICIOS ────────────────────────────────────────────────────────
+  - name: "servicios"
+    label: "Servicios / Tipos de sesiones"
+    folder: "_data/servicios"
+    create: true          # Sandra puede añadir servicios nuevos
+    delete: true          # Y eliminar los que ya no ofrezca
+    slug: "{{slug}}"
+    label_singular: "Servicio"
+    fields:
+      - { label: "Nombre del servicio", name: "nombre",    widget: "string" }
+      - { label: "Emoji / Icono",       name: "icono",     widget: "string", default: "🌿", hint: "Copia un emoji que represente el servicio" }
+      - { label: "Descripción",         name: "descripcion", widget: "text" }
+      - { label: "Orden de aparición",  name: "orden",     widget: "number", default: 1 }
+      - { label: "Activo (visible en web)", name: "activo", widget: "boolean", default: true }
+
+  # ── BLOG / NOTICIAS (opcional, puede activarse luego) ──────────────
+  - name: "blog"
+    label: "Blog / Artículos (opcional)"
+    folder: "_posts"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    label_singular: "Artículo"
+    fields:
+      - { label: "Título",       name: "title",       widget: "string" }
+      - { label: "Fecha",        name: "date",        widget: "datetime" }
+      - { label: "Imagen",       name: "imagen",      widget: "image",   required: false }
+      - { label: "Resumen",      name: "resumen",     widget: "text",    required: false }
+      - { label: "Contenido",    name: "body",        widget: "markdown" }
+      - { label: "Publicado",    name: "publicado",   widget: "boolean", default: false }
