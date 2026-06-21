@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TU_USUARIO/sandra-psicologia   # ← Cambia esto por tu usuario/repo de GitHub
+  repo: Iker-Projects/sandra-psicologia   # ← Cambia esto por tu usuario/repo de GitHub
   branch: main
 
 # Las imágenes subidas desde el panel se guardan aquí
