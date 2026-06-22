@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Iker-Projects/ABRAZO-DE-KOALA   # ← Cambia esto por tu usuario/repo de GitHub
+  repo: Iker-Projects/ABRAZO-DE-KOALA
   branch: main
   site_domain: starlit-praline-38da20.netlify.app
 
