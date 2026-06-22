@@ -3,6 +3,7 @@ backend:
   repo: Iker-Projects/ABRAZO-DE-KOALA
   branch: main
   site_domain: starlit-praline-38da20.netlify.app
+  auth_type: pkce
 
   
 site_url: https://starlit-praline-38da20.netlify.app
