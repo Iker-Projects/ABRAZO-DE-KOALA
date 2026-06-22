@@ -1,5 +1,5 @@
 backend:
-  repo: git-gateway
+  name: git-gateway
   branch: main
   
 site_url: https://starlit-praline-38da20.netlify.app
