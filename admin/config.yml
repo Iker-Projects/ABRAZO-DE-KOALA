@@ -23,7 +23,7 @@ collections:
       # DATOS PERSONALES / HERO
       - name: "perfil"
         label: "Perfil y presentación"
-        file: "_data/perfil.json"
+        file: "data/perfil.json"
         fields:
           - { label: "Nombre completo",     name: "nombre",    widget: "string",   default: "Sandra Carrera Castaño" }
           - { label: "Tagline (frase hero)", name: "tagline",   widget: "string",   default: "Un espacio para crecer, comprender y florecer" }
@@ -34,7 +34,7 @@ collections:
       # CONTACTO
       - name: "contacto"
         label: "Datos de contacto"
-        file: "_data/contacto.json"
+        file: "data/contacto.json"
         fields:
           - { label: "Teléfono",   name: "telefono",  widget: "string", default: "+34 678 517 890" }
           - { label: "Email",      name: "email",     widget: "string", default: "sandracc1998@gmail.com" }
@@ -45,7 +45,7 @@ collections:
   # ── SERVICIOS ────────────────────────────────────────────────────────
   - name: "servicios"
     label: "Servicios / Tipos de sesiones"
-    folder: "_data/servicios"
+    folder: "data/servicios"
     create: true          # Sandra puede añadir servicios nuevos
     delete: true          # Y eliminar los que ya no ofrezca
     slug: "{{slug}}"
